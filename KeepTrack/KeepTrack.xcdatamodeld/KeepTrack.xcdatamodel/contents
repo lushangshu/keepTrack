@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeDue" optional="YES" attributeType="Date" defaultDateTimeInterval="0" defaultValueString="nil" syncable="YES"/>
+        <attribute name="timeNotify" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="timeSpent" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="categorys" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskCategory" inverseName="items" inverseEntity="TaskCategory" syncable="YES"/>
+    </entity>
+    <entity name="ScoreEachDay" representedClassName="ScoreEachDay" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="TaskCategory" representedClassName="TaskCategory">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" maxCount="15" deletionRule="Nullify" destinationEntity="Item" inverseName="categorys" inverseEntity="Item" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="Item" positionX="529" positionY="198" width="128" height="135"/>
+        <element name="ScoreEachDay" positionX="441" positionY="243" width="128" height="103"/>
+        <element name="TaskCategory" positionX="351" positionY="198" width="108" height="73"/>
+    </elements>
+</model>
